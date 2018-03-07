@@ -8,12 +8,21 @@
   <meta name="Description" content="">
   <title>无刷投票</title>
  </head>
-
+<script type="text/javascript">
+	function vote() {
+		var hh = document.createElement('img'); //创建img标签
+		
+		// 设置src 属性,浏览器将会请求src对应的资源
+		hh.setAttribute('src','./01-vote.php');
+		
+		//document.getElementById('progress').appendChild(hh);
+	}
+</script>
  <body>
 	<div>
 		<p><img src = './wmc.jpg' /></p>
 		<p><a href = '01-vote.php'>投票方法1</a></p>
-
+		<p><input type="button" value="投票方法2" onclick="vote();" /></p>
 	</div>
  </body>
 </html>
