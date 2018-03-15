@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Html_file_api测试</title>
+ </head>
+
+ <script type="text/javascript">
+
+ function selfile() {
+	var pic=document.getElementsByTagName("input")[0].files[0];
+	console.log(pic);
+	var cont='';
+	cont += "文件名称是" + pic.name +"<br />";
+	cont += "文件的大小是" + pic.size + "<br />";
+	console.log(cont);
+
+
+
+	var debug = document.getElementById('debug');
+	debug.innerHTML=cont;
+ }
+ </script>
+ <body>
+	<div id="debug">
+	sfs
+	</div>
+	<input type="file" name="pic" onchange="selfile();" />
+ </body>
+</html>
