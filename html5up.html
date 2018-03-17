@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<script type="text/javascript">
+
+function selfile() {
+	var fm = new FormData();
+	
+	var fi = document.getElementsByTagName("input")[0].files[0];
+	fm.append('pic',fi);
+	console.log(fm);
+	var xhr = new XMLHttpRequest();
+	console.log(xhr);
+	xhr.open('POST','./upfile.php',true);
+	xhr.onreadystatechange = function() {
+		if(this.readyState == 4) {
+			//console.log(responseTest);
+			document.getElementById('upfile').innerHTML=this.responseText;
+		}
+	}
+	xhr.send(fm);
+	
+ }
+</script>
+
+<style type="text/css">
+</style>
+</head>
+ <body>
+    <div id='upfile'>
+  </div>
+  <input type="file" name="pic" onchange=selfile(); />
+ </body>
+</html>
